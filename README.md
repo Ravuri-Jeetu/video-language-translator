@@ -1,2 +1,2 @@
 # VideoLanguageTranslation
-this a personal team project 
+this a personal team project.
