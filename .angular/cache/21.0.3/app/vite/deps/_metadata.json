@@ -1,0 +1,55 @@
+{
+  "hash": "e461fba0",
+  "configHash": "c8ed4360",
+  "lockfileHash": "abba7570",
+  "browserHash": "dc4b0f2f",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "c74a0610",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "80b52984",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "b37ca060",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "565ffba4",
+      "needsInterop": false
+    },
+    "@google/genai": {
+      "src": "../../../../../../node_modules/@google/genai/dist/web/index.mjs",
+      "file": "@google_genai.js",
+      "fileHash": "613511f6",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-QOEVBXOM": {
+      "file": "chunk-QOEVBXOM.js"
+    },
+    "chunk-SIJ5V4HG": {
+      "file": "chunk-SIJ5V4HG.js"
+    },
+    "chunk-LJK4S5L7": {
+      "file": "chunk-LJK4S5L7.js"
+    },
+    "chunk-QL2NEKJJ": {
+      "file": "chunk-QL2NEKJJ.js"
+    },
+    "chunk-GOMI4DH3": {
+      "file": "chunk-GOMI4DH3.js"
+    }
+  }
+}

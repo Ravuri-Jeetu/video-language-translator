@@ -1,0 +1,12 @@
+[build]
+  command = "npm ci && npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Set this in Netlify UI to your Render URL in production
+  # VITE_API_BASE_URL = "https://video-language-translator-backend.onrender.com"
+
+[[redirects]]
+  from = "/processed/*"
+  to = "/processed/:splat"
+  status = 200

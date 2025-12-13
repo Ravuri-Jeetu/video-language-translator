@@ -1,0 +1,5 @@
+{
+  "name": "Video Language Translator",
+  "description": "An application to translate spoken language in a video to a different language. This is a frontend simulation of a complex video processing workflow, using AI for language detection and translation.",
+  "requestFramePermissions": []
+}

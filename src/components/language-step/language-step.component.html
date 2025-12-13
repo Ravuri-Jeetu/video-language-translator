@@ -1,0 +1,37 @@
+<div class="p-8">
+  <h2 class="text-2xl font-semibold text-center text-slate-100">Step 2: Set Languages</h2>
+  <p class="text-center text-slate-400 mt-2">We've detected the source language. Now, choose your target language.</p>
+
+  <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <label for="source-lang" class="block text-sm font-medium text-slate-300">Source Language (Detected)</label>
+      <div class="mt-1 relative">
+        @if (isLoading()) {
+          <div class="w-full h-10 bg-slate-700 rounded-md animate-pulse"></div>
+        } @else {
+          <div class="w-full p-2 h-10 bg-slate-900/50 border border-slate-600 rounded-md text-slate-200">
+            {{ sourceLanguage() }}
+          </div>
+        }
+      </div>
+    </div>
+    <div>
+      <label for="target-lang" class="block text-sm font-medium text-slate-300">Target Language</label>
+      <select id="target-lang" (change)="onTargetLanguageChange($event)" class="mt-1 block w-full pl-3 pr-10 py-2 h-10 text-base border-slate-600 focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm rounded-md bg-slate-700 text-slate-200">
+        <option value="" disabled selected>Select a language...</option>
+        @for (lang of languages; track lang.code) {
+          <option [value]="lang.code">{{ lang.name }}</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-8 flex justify-end">
+    <button 
+      (click)="proceed()"
+      [disabled]="!targetLanguage() || isLoading()"
+      class="px-6 py-3 bg-sky-600 text-white font-semibold rounded-lg shadow-md hover:bg-sky-500 disabled:bg-slate-600 disabled:cursor-not-allowed disabled:text-slate-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-sky-500">
+      Translate Video
+    </button>
+  </div>
+</div>

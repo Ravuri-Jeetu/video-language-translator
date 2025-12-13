@@ -1,0 +1,46 @@
+<div class="p-8">
+  <h2 class="text-2xl font-semibold text-center text-slate-100">Step 1: Upload Your Video</h2>
+  <p class="text-center text-slate-400 mt-2">Drag and drop your video file or click to browse.</p>
+  
+  <div
+    (drop)="onDrop($event)"
+    (dragover)="onDragOver($event)"
+    (dragleave)="onDragLeave($event)"
+    [class.bg-sky-900/50]="isDragging()"
+    [class.border-sky-500]="isDragging()"
+    class="mt-6 border-2 border-dashed border-slate-600 rounded-lg p-8 text-center transition-colors duration-300 cursor-pointer hover:border-sky-500 hover:bg-slate-700/50"
+  >
+    <input type="file" id="file-upload" class="hidden" (change)="onFileSelected($event)" accept="video/mp4,video/x-m4v,video/*">
+    <label for="file-upload" class="cursor-pointer">
+      <div class="flex flex-col items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-slate-400">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9A2.25 2.25 0 0 0 4.5 18.75Z" />
+        </svg>
+        <p class="mt-2 text-slate-300">
+          @if (selectedFile(); as file) {
+            <span>{{ file.name }}</span>
+          } @else {
+            <span>Click to upload or drag & drop</span>
+          }
+        </p>
+        <p class="text-xs text-slate-500">MP4, MOV, AVI, etc.</p>
+      </div>
+    </label>
+  </div>
+  
+  @if (selectedFile(); as file) {
+    <div class="mt-4 p-4 bg-slate-700 rounded-md text-sm text-slate-300 flex justify-between items-center">
+      <span>{{ file.name }}</span>
+      <span class="font-mono text-slate-400">{{ formatBytes(file.size) }}</span>
+    </div>
+  }
+
+  <div class="mt-8 flex justify-end">
+    <button 
+      (click)="proceed()"
+      [disabled]="!selectedFile()" 
+      class="px-6 py-3 bg-sky-600 text-white font-semibold rounded-lg shadow-md hover:bg-sky-500 disabled:bg-slate-600 disabled:cursor-not-allowed disabled:text-slate-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-sky-500">
+      Next: Select Language
+    </button>
+  </div>
+</div>
