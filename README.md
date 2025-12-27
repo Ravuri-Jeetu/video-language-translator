@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # VideoLanguageTranslation
 This is a personal project.
 <br>
